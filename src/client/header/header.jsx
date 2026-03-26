@@ -1,14 +1,33 @@
-import "./header.css"
+import "../global.css";
+import { useState } from "react";
 
-const Header = () => {
+export default function Header() {
+  const [dark, setDark] = useState(false);
+
+  const toggleMode = () => {
+    document.body.classList.toggle("dark");
+    setDark(!dark);
+  };
+
   return (
-    <>
-      <header>
-        {/* Bu fayl headerni asosiy qismi uchun */}
-        <h1>header</h1>
-      </header>
-    </>
-  )
-}
+    <header className="navbar">
+      <div className="container nav-inner">
+        <div className="logo">
+          <div className="logo-box">A</div>Azizbek.dev
+        </div>
 
-export default Header
+        <nav>
+          <a href="#">Home</a>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#">Resume</a>
+          <a href="#">Contact</a>
+
+          <div className="nav-btn" onClick={toggleMode}>
+            {dark ? "☀️" : "🌙"}
+          </div>
+        </nav>
+      </div>
+    </header>
+  );
+}

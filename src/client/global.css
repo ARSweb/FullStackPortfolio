@@ -1,0 +1,1073 @@
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+body {
+  transition: background 0.4s, color 0.4s;
+}
+
+/* LIGHT / DARK */
+body.dark {
+  background: #0f172a;
+  color: #f5f3ff;
+}
+
+body.home-page {
+  background: linear-gradient(135deg,#e0f2fe,#eef2ff,#f5f3ff);
+  color: #111827;
+}
+
+body.home-page.dark {
+  background: linear-gradient(135deg,#0f172a,#020617,#020617);
+  color: #f5f3ff;
+}
+
+/* CONTAINER */
+.container {
+  max-width: 85%; /* oldin 1200 edi */
+  margin: auto;
+  padding: 0 40px; /* yonlardan ham kengroq */
+}
+
+/* NAVBAR */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  background: rgba(255,255,255,0.6);
+  transition: background 0.4s;
+  z-index: 1000; /* MUHIM */
+}
+
+body.dark .navbar {
+  background: rgba(15,23,42,0.6);
+}
+
+.nav-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+}
+
+.logo {
+  display: flex;
+  gap: 10px;
+  font-weight: bold;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-box {
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(#3b82f6,#6366f1);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: inherit;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #3b82f6;
+}
+
+.nav-btn {
+  cursor: pointer;
+  font-size: 18px;
+  margin-left: 15px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: rgba(0,0,0,0.05);
+  transition: all 0.3s;
+}
+
+.nav-btn:hover {
+  background: rgba(0,0,0,0.1);
+}
+
+body.dark .nav-btn {
+  background: rgba(255,255,255,0.1);
+}
+
+/* HERO */
+.home {
+  padding-top: 120px;
+   min-height: 100vh; /* ENG MUHIM */
+  display: flex;
+  align-items: center;
+}
+
+.home-inner {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 120px;
+}
+
+/* ANIMATION */
+.left {
+  opacity: 0;
+  transform: translateX(-120px);
+  animation: leftIn 1s forwards;
+}
+
+.right {
+  opacity: 0;
+  transform: translateX(120px);
+  animation: rightIn 1s forwards;
+}
+
+@keyframes leftIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes rightIn {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.home-left {
+  flex: 1;
+}
+
+.badge {
+  padding: 8px 18px;
+  background: #dbeafe;
+  border-radius: 30px;
+  font-size: 14px;
+}
+body.dark .badge{
+  background: #1e2128;
+  color: #fff;
+}
+
+/* H1 */
+h1 {
+  font-size: 65px;
+  margin: 25px 0;
+  font-weight: 800;
+  color: #111827;
+  transition: color 0.4s;
+}
+body.dark h1{
+  color: #fff;
+}
+
+h1 span {
+  background: linear-gradient(#3b82f6,#6366f1);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 650px;
+  margin-top: 10px;
+  color: #737373;
+}
+
+/* BUTTONS */
+.buttons {
+  margin-top: 25px;
+}
+
+.btn.primary {
+  padding: 17px 50px;
+  border-radius: 12px;
+  margin-right: 12px;
+  cursor: pointer;
+  border: none;
+  font-size: 16px;
+  background: #fff;
+  color: #000;
+  transition: all 0.4s;
+  transition: all 0.3s ease;
+}
+.btn.primary:hover{
+  transform: translateY(-2px);
+  box-shadow: 10px  11px 10px rgba(98, 49, 183, 0.593);
+}
+body.dark .btn.primary{
+  background:  #e3eeff;
+  color: #000;
+}
+
+.btn.secondary {
+  padding: 17px 50px;
+  border: 1px solid black;
+  border-radius: 12px;
+  margin-right: 12px;
+  cursor: pointer;
+  /* border: none; */
+  background: #e3eeff;
+  color: #111827;
+  transition: all 0.4s;
+}
+
+.btn.secondary:hover {
+  color: white;
+  background: #000;
+  border: 1px solid #0ea5e9; /* KO‘K CHIZIQ */
+}
+
+body.dark .btn.secondary {
+  border: 1px solid rgb(254, 254, 255);
+  color: #fff; /* TUZATILDI */
+  background: transparent;
+}
+
+body.dark .btn.secondary:hover {
+  background: #fff;
+  color: #000;
+  border: 1px solid #0ea5e9; /* TO‘G‘RI YOZILDI */
+}
+
+
+/* TERMINAL */
+.code-box {
+  width: 400px;
+  height: 258px;
+  padding: 30px;
+  border-radius: 15px;
+  background: #0f172a;
+  color: #e5e7eb;
+  position: relative;
+  transform: translateY(30px);
+  box-shadow: 0 25px 60px rgba(0,0,0,0.4);
+  transition: 0.4s, color 0.4s, background 0.4s, border-radius 0.4s;
+  backdrop-filter: blur(8px);
+  overflow: hidden;
+}
+
+body.dark .code-box {
+  background: #f5f3ff;
+  color: #111827;
+}
+
+/* MAC BUTTONS */
+.mac {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.mac span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.red { background: #ff5f56; }
+.yellow { background: #ffbd2e; }
+.green { background: #27c93f; }
+
+/* CODE COLORS */
+.keyword { color: #c084fc; }
+.string { color: #4ade80; }
+.key { color: #60a5fa; }
+.boolean { color: #f59e0b; }
+
+pre {
+  margin-top: 15px;
+  line-height: 1.8;
+  font-size: 15px;
+}
+
+/* CARD */
+.card {
+  height: 72px;
+  position: absolute;
+  right: 0;
+  padding: 12px 18px;
+  background: white;
+  border-radius: 10px 0 10px 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  animation: cardFloat 3s infinite ease-in-out;
+  overflow: hidden;
+  margin-top: -15px;
+}
+
+.card-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-text .small-text {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.card-text .large-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: #111827;
+}
+
+.card .check {
+  width: 35px;
+  height: 35px;
+  background: #4ade80;
+  color: white;
+  font-size: 12px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+}
+
+body.dark .code-box .card {
+  background: #111827;
+}
+
+body.dark .code-box .card .small-text {
+  color: #d1d5db;
+}
+
+body.dark .code-box .card .large-text {
+  color: #f5f3ff;
+}
+
+/* FLOAT ANIMATION */
+@keyframes cardFloat {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+  100% { transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .home-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 60px;
+  }
+
+  h1 { font-size: 36px; }
+
+  p {
+    font-size: 16px;
+    max-width: 90%;
+  }
+
+  .code-box {
+    width: 90%;
+    height: 500px;
+  }
+}
+.chiziq{
+  width: 624px;
+  border: 1px solid black;
+  margin-top: 60px;
+}
+#ib{
+  margin-top: 30px;
+}
+.iconlar{
+  margin-top: 10px;
+}
+/* Default kulrang */
+.iconlar i {
+  font-size: 25px;
+  margin-right: 15px;
+  color: #9ca3af;
+  transition: 0.3s;
+}
+
+/* Har biriga alohida hover rang */
+.devicon-react-original:hover { color: #61dafb; }
+.devicon-nodejs-plain:hover { color: #22c55e; }
+.devicon-javascript-plain:hover { color: #facc15; }
+.devicon-git-plain:hover { color: #ef4444; }
+.devicon-docker-plain:hover { color: #0ea5e9; }
+
+/* ABOUT */
+.about {
+  padding: 140px 0;
+  transition: 0.4s;
+}
+
+/* LIGHT */
+body.home-page .about {
+  background: #ffffff;
+  color: #111827;
+}
+
+/* DARK */
+body.dark .about {
+  background: #0f172a;
+  color: #f5f3ff;
+}
+
+/* HEADER */
+.about-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.about-header h2 {
+  font-size: 38px;
+}
+
+.underline {
+  width: 70px;
+  height: 4px;
+  background: #3b82f6;
+  margin: 10px auto;
+  border-radius: 10px;
+}
+
+/* LAYOUT */
+.about-content {
+  display: flex;
+  gap: 25px; /* oldin 150 juda katta edi */
+  align-items: center;
+  justify-content: center; /* ENG MUHIM */
+}
+.about-left {
+  flex: 1;
+}
+
+.about-right {
+  width: 40%;
+}
+
+/* LEFT */
+.image-box {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 50px; 
+  overflow: hidden;
+}
+
+.image-box img {
+  width: 100%;
+  height: 700px;
+  object-fit: cover;
+  display: block;
+  transition: 0.4s;
+}
+
+.image-box:hover img {
+  transform: scale(1.05);
+}
+
+/* IMAGE TEXT */
+.image-overlay {
+  position: absolute;
+  bottom: 25px;
+  left: 25px;
+  color: white;
+}
+
+.coder {
+  font-size: 14px;
+  opacity: 0.8;
+}
+
+.image-overlay h3 {
+  font-size: 24px;
+}
+
+/* RIGHT */
+.main-text {
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+.main-text span {
+  color: #3b82f6;
+}
+
+/* TEXT COLORS */
+.about-right p {
+  margin-bottom: 15px;
+  line-height: 1.7;
+}
+
+/* LIGHT TEXT */
+body.home-page .about-right p {
+  color: #6b7280;
+}
+
+/* DARK TEXT */
+body.dark .about-right p {
+  color: #d1d5db;
+}
+
+/* CARDS */
+.about-cards {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.about-card {
+  flex: 1;
+  padding: 22px;
+  border-radius: 14px;
+  transition: 0.3s;
+}
+
+/* LIGHT CARD */
+body.home-page .about-card {
+  background: #f3f4f6;
+}
+
+/* DARK CARD */
+body.dark .about-card {
+  background: #1e293b;
+}
+
+.about-card:hover {
+  transform: translateY(-6px);
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .about-content {
+    flex-direction: column;
+  }
+}
+
+/* SECTION */
+.projects {
+  padding: 120px 0;
+}
+
+/* HEADER */
+.projects-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.projects-header h2 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.projects-header p {
+  color: #6b7280;
+  max-width: 500px;
+}
+
+.github-link {
+  text-decoration: none;
+  color: #3b82f6;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.github-link:hover {
+  transform: translateX(5px);
+}
+
+/* GRID */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* CARD */
+.project-card {
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  transition: 0.3s;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+}
+
+/* IMAGE */
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+/* BODY */
+.card-body {
+  padding: 20px;
+}
+
+.card-body h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.card-body p {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 15px;
+}
+
+/* TAGS */
+.tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tags span {
+  font-size: 12px;
+  padding: 6px 10px;
+  background: #f3f4f6;
+  border-radius: 8px;
+}
+
+/* DARK MODE */
+body.dark .project-card {
+  background: #1e293b;
+}
+
+body.dark .card-body p {
+  color: #d1d5db;
+}
+
+body.dark .tags span {
+  background: #334155;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+}
+.project-card {
+  position: relative;
+  overflow: hidden;
+}
+
+/* OVERLAY BUTUN CARD USTIDA */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(6px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+
+  opacity: 0;
+  transition: 0.3s;
+  z-index: 10;
+}
+
+/* HOVER */
+.project-card:hover .overlay {
+  opacity: 1;
+}
+
+/* BUTTON */
+.overlay .btn {
+  padding: 12px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+/* LIVE */
+.overlay .live {
+  background: #3b82f6;
+  color: white;
+}
+
+/* CODE */
+.overlay .code {
+  background: white;
+  color: black;
+}
+/* SECTION */
+.resume {
+  padding: 120px 0;
+  width: 100%;
+  background: #eaefff;
+}
+body.dark .resume{
+  background:  #0f172a;
+}
+
+/* 🔥 TASHQI KATTA QUTI */
+.resume-wrapper {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #0f172a; /* qoraroq */
+  color: white;
+  border-radius: 1px solid white;
+  margin-left: 200px;
+}
+
+/* 🔥 CHAP TOMON */
+.resume-left {
+  width: 25%;
+  padding: 40px;
+  text-align: center;
+  background: #020617; /* yanada qoraroq */
+  
+}
+
+.resume-left img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.role {
+  color: #94a3b8;
+  margin-bottom: 20px;
+}
+
+.info p {
+  font-size: 14px;
+  margin: 8px 0;
+  color: #cbd5f5;
+}
+
+/* BUTTON */
+.cv-btn {
+  margin-top: 20px;
+  padding: 12px 20px;
+  border-radius: 10px;
+  border: none;
+  background: #0ea5e9;
+  color: white;
+  cursor: pointer;
+}
+
+/* 🔥 ICHKI O‘NG QUTI */
+.resume-right {
+  width: 80%;
+  padding: 40px;
+  background: #d1d5db; /* ichki quti rang */
+  border-radius: 0px 20px 20px 0px;
+  color: #020617;
+}
+body.dark .resume-right {
+  background:  #1e293b;
+  color: #d1d5db;
+}
+
+/* TEXT */
+.resume-right h3 {
+  margin-bottom: 15px;
+}
+
+.item {
+  margin-bottom: 25px;
+}
+
+.item h4 {
+  margin-bottom: 5px;
+}
+
+.item span {
+  font-size: 13px;
+  color: #38bdf8;
+}
+
+.item p {
+  font-size: 14px;
+  color: #0f172a;
+}
+.resume-right {
+  border-left: 1px solid rgba(255,255,255,0.1);
+} 
+.chiziqi{
+  width: 100%;
+  border: 1px solid #000;
+  margin-bottom: 10px;
+}
+body.dark .chiziqi{
+  border: 1px solid #fff;
+}
+body.dark .resume-right p{
+  color: #e3eeff;
+}
+/* Contact bolimi */
+
+
+/* ===== CONTACT SECTION ===== */
+.contact{
+  width: 100%;
+  height: 750px;
+  background: #e3eeff;
+ }
+ body.dark .contact{
+  background: #020617;
+ }
+/* CONTAINER */
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 80px;
+  max-width: 1300px;
+  margin: auto;
+}
+
+/* LEFT SIDE */
+.contact-left {
+  flex: 1;
+  margin-bottom: -200px;
+}
+
+.contact-left h1 {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.contact-left p {
+  color: #64748b;
+  line-height: 1.7;
+  max-width: 500px;
+  margin-bottom: 40px;
+}
+
+/* INFO BLOCK */
+.contact-info {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.contact-info .icon {
+  width: 50px;
+  height: 50px;
+  background: #e2e8f0;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.contact-info span {
+  font-size: 14px;
+  color: #94a3b8;
+}
+
+.contact-info h4 {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+/* SOCIAL ICONS */
+.social-icons {
+  display: flex;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.social-icons i {
+  font-size: 18px;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
+.social-icons i:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+/* RIGHT SIDE (FORM CARD) */
+.contact-right {
+  flex: 1;
+  transform: translateY(150px);
+}
+
+.form {
+  background: #f1f5f9;
+  padding: 35px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  
+}
+body.dark .form, input, textarea{
+  background: #0f172a;
+}
+
+/* LABEL */
+.form label {
+  font-size: 14px;
+  margin-bottom: 6px;
+  color: #475569;
+}
+
+/* INPUT */
+.form input,
+.form textarea {
+  margin-bottom: 18px;
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid #cbd5f5;
+  outline: none;
+  font-size: 14px;
+  transition: 0.3s;
+  background: #e5e7eb;
+}
+
+.form input:focus,
+.form textarea:focus {
+  border-color: #6366f1;
+}
+
+/* TEXTAREA */
+.form textarea {
+  min-height: 120px;
+  resize: none;
+}
+
+/* BUTTON */
+.form button {
+  margin-top: 10px;
+  padding: 16px;
+  border: none;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #0ea5e9, #4f46e5);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.form button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(79,70,229,0.3);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 900px) {
+  .contact-container {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .contact-left h1 {
+    font-size: 36px;
+  }
+}
+
+
+/* ===== FOOTER ===== */
+/* ===== FOOTER ===== */
+.footer {
+  max-width: 1300px;
+  margin: 0px auto 30px;
+  padding-top: 25px;
+  border-top: 1px solid #e2e8f0;
+
+  display: grid;
+  grid-template-columns: 1fr auto; /* chap va o‘ng ustun */
+  align-items: center;
+  gap: 10px; /* ustunlar orasiga biroz bo‘sh joy */
+}
+
+/* CHAP BLOK */
+.footer h2 {
+  font-size: 18px;
+  font-weight: 600;
+  grid-column: 1;
+}
+
+.footer p {
+  font-size: 14px;
+  color: #64748b;
+  margin-top: 5px;
+  grid-column: 1;
+}
+
+/* O‘NG LINKLAR BLOKI */
+.footer .footer-links {
+  display: flex;
+  gap: 25px;
+  justify-content: flex-end;
+  grid-column: 2;
+}
+
+/* Linklar */
+.footer .footer-links a {
+  font-size: 14px;
+  color: #64748b;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer .footer-links a:hover {
+  color: #0ea5e9;
+}
+
+/* linklarni o‘ngga chiqarish */
+.footer a:first-of-type {
+  grid-column: 2;
+  justify-self: end;
+}
+
+body.dark .footer {
+  border-top: 1px solid #1e293b;
+}
+
+body.dark .footer p,
+body.dark .footer a {
+  color: #94a3b8;
+}
+
+body.dark .footer a:hover {
+  color: #38bdf8;
+}

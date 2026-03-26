@@ -1,37 +1,29 @@
-/* base css*/
+/* RESET */
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
-}
-
-:root {
-  --white:#fff;
-  --black:#000;
-}
-
-/* dark */
-.dark {
-  --white:var(--black)
-  --black:var(var(--white))
+  font-family: "Segoe UI", sans-serif;
 }
 
 body {
-  font-family: "Inter";
+  transition: background 0.4s, color 0.4s;
 }
 
-li {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-  color: currentColor;
-}
-
+/* CONTAINER */
 .container {
-  max-width: 1280px;
-  width: 100%;
-  margin: 0 auto;
-  padding-inline: 10px;
+  max-width: 100%;
+  margin: auto;
+  padding: 0 40px;
+}
+
+/* LIGHT / DARK */
+body.dark {
+  background: #0f172a;
+  color: #f5f3ff;
+}
+
+body.home-page {
+  background: linear-gradient(135deg,#e0f2fe,#eef2ff,#f5f3ff);
+  color: #111827;
 }

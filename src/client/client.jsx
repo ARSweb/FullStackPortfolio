@@ -1,9 +1,11 @@
-// Barcha sahifalar shu yerga chaqiriladi
+import { useEffect } from "react";
+import "./global.css";
 
 // Header
 import Header from "./header/header"
 
 // Main
+import Home from "./main/home/home"
 import About from "./main/about/about"
 import Project from "./main/projects/project"
 import Resume from "./main/resume/resume"
@@ -13,28 +15,26 @@ import Contact from "./main/contact/contact"
 import Footer from "./footer/footer"
 
 const Client = () => {
+
+  useEffect(() => {
+    document.body.classList.add("home-page");
+  }, []);
+
   return (
     <>
-      <div className="container">
+      <Header/>
 
-        <header>
-          <Header/>
-        </header>
+      <main>
+        <Home/>
+        <About/>
+        <Project/>
+        <Resume/>
+        <Contact/>
+      </main>
 
-        <main>
-          <About/>
-          <Project/>
-          <Resume/>
-          <Contact/>
-        </main>
-
-        <footer>
-          <Footer/>
-        </footer>
-
-      </div>
+      <Footer/>
     </>
   )
 }
 
-export default Client
+export default Client 
