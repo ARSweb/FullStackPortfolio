@@ -1,0 +1,75 @@
+/* ===== FOOTER ===== */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0;
+  flex-wrap: wrap;
+}
+
+/* CHAP BLOK */
+.footer h2 {
+  font-size: 18px;
+  font-weight: 600;
+  grid-column: 1;
+}
+
+.footer p {
+  font-size: 14px;
+  color: #64748b;
+  margin-top: 5px;
+  grid-column: 1;
+}
+
+/* O‘NG LINKLAR BLOKI */
+.footer .footer-links {
+  display: flex;
+  gap: 25px;
+  justify-content: flex-end;
+  grid-column: 2;
+}
+
+/* Linklar */
+.footer .footer-links a {
+  font-size: 14px;
+  color: #64748b;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer .footer-links a:hover {
+  color: #0ea5e9;
+}
+
+/* linklarni o‘ngga chiqarish */
+.footer a:first-of-type {
+  grid-column: 2;
+  justify-self: end;
+}
+
+body.dark .footer {
+  border-top: 1px solid #1e293b;
+}
+
+body.dark .footer p,
+body.dark .footer a {
+  color: #94a3b8;
+}
+
+body.dark .footer a:hover {
+  color: #38bdf8;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .footer-links {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+  }
+}

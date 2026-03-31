@@ -1,0 +1,176 @@
+/* SECTION */
+.projects {
+  padding: 120px 0;
+}
+
+/* HEADER */
+.projects-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.projects-header h2 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.projects-header p {
+  color: #6b7280;
+  max-width: 500px;
+}
+
+.github-link {
+  text-decoration: none;
+  color: #3b82f6;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.github-link:hover {
+  transform: translateX(5px);
+}
+
+/* GRID */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* CARD */
+.project-card {
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  transition: 0.3s;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+}
+
+/* IMAGE */
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+/* BODY */
+.card-body {
+  padding: 20px;
+}
+
+.card-body h3 {
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.card-body p {
+  font-size: 14px;
+  color: #6b7280;
+  margin-bottom: 15px;
+}
+
+/* TAGS */
+.tags {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.tags span {
+  font-size: 12px;
+  padding: 6px 10px;
+  background: #f3f4f6;
+  border-radius: 8px;
+}
+
+/* DARK MODE */
+body.dark .project-card {
+  background: #1e293b;
+}
+
+body.dark .card-body p {
+  color: #d1d5db;
+}
+
+body.dark .tags span {
+  background: #334155;
+}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+}
+.project-card {
+  position: relative;
+  overflow: hidden;
+}
+
+/* OVERLAY BUTUN CARD USTIDA */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(6px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+
+  opacity: 0;
+  transition: 0.3s;
+  z-index: 10;
+}
+
+/* HOVER */
+.project-card:hover .overlay {
+  opacity: 1;
+}
+
+/* BUTTON */
+.overlay .btn {
+  padding: 12px 20px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+/* LIVE */
+.overlay .live {
+  background: #3b82f6;
+  color: white;
+}
+
+/* CODE */
+.overlay .code {
+  background: white;
+  color: black;
+}
+
+@media (max-width: 1024px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,4 +1,4 @@
-import "../../global.css";
+import "./contact.css";
 
 export default function Contact() {
   return (
@@ -30,11 +30,10 @@ export default function Contact() {
             <div>
               <span>Socials</span>
               <div className="social-icons">
-                <i className="devicon-telegram-plain"></i>
-                <i className="devicon-instagram-plain"></i>
-                <i className="devicon-git-plain"></i>
-                <i className="devicon-instagram-original"></i>
-              </div>
+  <i className="fa-brands fa-telegram"></i>
+  <i className="fa-brands fa-instagram"></i>
+  <i className="fa-brands fa-github"></i>
+</div>
             </div>
           </div>
         </div>

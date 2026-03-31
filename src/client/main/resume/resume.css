@@ -1,0 +1,97 @@
+/* RESUME WRAPPER */
+.resume-wrapper {
+  max-width: 900px;
+  display: flex;
+  margin: auto;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #0f172a;
+  color: white;
+}
+
+/* CHAP BLOK */
+.resume-left {
+  width: 25%;
+  padding: 40px;
+  background: #F8FAFC;
+  border-right: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.resume-left img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.resume-left h2 {
+  margin: 10px 0 5px;
+  font-size: 18px;
+}
+
+.chiziqi {
+  width: 100%;
+  border: 1px solid #000;
+  margin-bottom: 10px;
+}
+
+.info p, .skills p, .skills h4 {
+  margin: 2px 0;
+  font-size: 14px;
+  color: #555;
+}
+
+.skills h4 {
+  font-weight: 600;
+}
+
+/* O‘NG BLOK */
+/* O‘NG BLOK */
+.resume-right {
+  width: 75%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  background: #F8FAFC;
+  border-left: 1px solid black;
+}
+
+.item {
+  margin-bottom: 15px; /* har bir experience itemni yopishqoq qiladi */
+}
+
+.item p {
+  line-height: 1.5; /* compact spacing */
+  margin-bottom: 5px;
+}
+.resume-right h2,
+.resume-right h4,
+.resume-right h3,
+.resume-right p,
+.resume-right span {
+  color: #000000; /* oq rang */
+  
+}
+.resume-right h2{
+  font-size: 65px;
+}
+.resume-right h4{
+  font-size: 35px;
+}
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .resume-wrapper {
+    flex-direction: column;
+  }
+  .resume-left, .resume-right {
+    width: 100%;
+    border-radius: 0;
+    border: none;
+  }
+}

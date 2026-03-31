@@ -1,4 +1,4 @@
-import "../global.css";
+import "./header.css";
 import { useState } from "react";
 
 export default function Header() {
