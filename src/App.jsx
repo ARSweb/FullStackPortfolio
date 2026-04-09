@@ -1,13 +1,9 @@
-import Client from "./client/client"
+import MainRoutes from "./router/MainRoutes"
 import "./index.css"
 
 function App() {
 
-  return (
-    <>
-      <Client/>
-    </>
-  )
+  return <MainRoutes/>
 }
 
 export default App
